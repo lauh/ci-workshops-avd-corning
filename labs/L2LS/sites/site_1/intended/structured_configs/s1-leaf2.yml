@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -80,6 +86,15 @@ local_users:
   sha512_password: $6$arista$D9mWFZLIpn.lkdnWNKwKhF9wa1gnvsTIOkcpRjlGzhdlwFP2BBYNbhksttQkubaaZM7AXPUtuHpfCr7oyZGyj.
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVixeKLWpQG6YE2wJNFVzGfw6FthNlFe6yUWFAh1x40mH/nzR+ZmHgbOkYeWDbqCYM1p9z5o8QCrvxJz3xJ1xkpYM62z4GqA7tifCxB2wbn+KzueF9gmZWZ3bWVkv8q10Q2oqvk6mmVzIo0cdD84aoQj098vDKh0M/RllfkUrW8SsKbN/B+ffvHM/OZnChnj8cE00gUffaYTl5Ny7N/eWyvASfR/tE5BVoPhCQdjATPXlDNpBeUiizMDwj1Qy3i8mEhTjQAHJbw6oQZZ4QPg+aBtwexDI3WNNsHzK3BS6Dt8L2i1dDNF+1ZUFZe5E/N8c16FthkuhLkb7KcdP7mgl5
     arista@corning-taiwan-14-8e63be66-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 management_api_http:
   enable_https: true
   enable_vrfs:
